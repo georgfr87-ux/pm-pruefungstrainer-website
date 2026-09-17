@@ -758,73 +758,79 @@ h1 {
     }
 
     .bundle-panel {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      align-items: stretch;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.9rem;
+      align-items: start;
     }
 
     .bundle-copy {
-      display: flex;
-      flex-direction: column;
+      display: contents;
       width: 100%;
       max-width: none;
-      gap: 0.75rem;
     }
 
-    .bundle-copy > * {
+    .bundle-panel > h3,
+    .bundle-panel > p,
+    .bundle-panel > div,
+    .bundle-panel > a,
+    .bundle-panel > .bundle-copy > *,
+    .bundle-panel > .bundle-visual {
+      grid-column: 1;
       max-width: 100%;
     }
 
-    .bundle-badge,
-    .bundle-highlight,
-    .bundle-savings {
-      width: fit-content;
-      max-width: 100%;
-      padding: 0.65rem 1rem;
+    .bundle-badge {
+      order: 1;
+      width: auto;
+      max-width: min(100%, 300px);
+      padding: 0.75rem 1.1rem;
       box-sizing: border-box;
       line-height: 1.4;
+    }
+
+    .bundle-panel h3 {
+      order: 2;
+    }
+
+    .bundle-subhead {
+      order: 3;
+    }
+
+    .bundle-copy > p:not(.bundle-badge):not(.bundle-subhead):not(.bundle-highlight):not(.bundle-savings):not(.bundle-note) {
+      order: 4;
     }
 
     .bundle-visual {
       order: 5;
       position: static;
+      left: auto;
+      right: auto;
+      top: auto;
+      bottom: auto;
       width: 100%;
-      max-width: min(78vw, 280px);
+      max-width: min(78vw, 260px);
       min-height: 0;
-      margin: 0.35rem auto 0.15rem;
+      margin: 0.35rem auto 0.2rem;
       padding: 0;
       overflow: visible;
       display: flex;
       justify-content: center;
       align-items: flex-end;
       align-self: center;
+      justify-self: center;
       box-sizing: border-box;
-    }
-
-    .bundle-visual-doc {
-      width: min(45vw, 170px);
-      max-width: 170px;
-      position: relative;
-      left: auto;
-      right: auto;
-      top: auto;
-      transform: translateX(-6px) rotate(-5deg);
-    }
-
-    .bundle-visual-app {
-      width: min(34vw, 126px);
-      max-width: 126px;
-      position: relative;
-      left: auto;
-      right: auto;
-      top: auto;
-      margin-left: -8px;
       transform: none;
+      float: none;
     }
 
     .bundle-highlight {
       order: 6;
+      width: fit-content;
+      max-width: 100%;
+      padding: 0.65rem 1rem;
+      box-sizing: border-box;
+      line-height: 1.4;
     }
 
     .bundle-pricing {
@@ -843,6 +849,9 @@ h1 {
       order: 8;
       width: fit-content;
       max-width: 100%;
+      padding: 0.75rem 1.1rem;
+      box-sizing: border-box;
+      line-height: 1.4;
       white-space: normal;
     }
 
@@ -856,6 +865,30 @@ h1 {
 
     .bundle-note {
       order: 10;
+    }
+
+    .bundle-visual-doc {
+      width: min(44vw, 162px);
+      max-width: 162px;
+      position: relative;
+      left: auto;
+      right: auto;
+      top: auto;
+      bottom: auto;
+      margin: 0;
+      transform: translateX(-6px) rotate(-5deg);
+    }
+
+    .bundle-visual-app {
+      width: min(33vw, 118px);
+      max-width: 118px;
+      position: relative;
+      left: auto;
+      right: auto;
+      top: auto;
+      bottom: auto;
+      margin-left: -8px;
+      transform: none;
     }
 
     .product-hero-grid .product-hero-copy {
