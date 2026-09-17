@@ -758,11 +758,15 @@ h1 {
     }
 
     .bundle-panel {
+      display: flex;
+      flex-direction: column;
       gap: 1rem;
       align-items: stretch;
     }
 
     .bundle-copy {
+      display: flex;
+      flex-direction: column;
       width: 100%;
       gap: 0.75rem;
     }
@@ -772,31 +776,33 @@ h1 {
     }
 
     .bundle-highlight {
-      order: 7;
+      order: 5;
     }
 
     .bundle-visual {
       order: 6;
+      width: 100%;
       min-height: 0;
       padding: 0.35rem 0 0.2rem;
       overflow: visible;
       justify-content: center;
+      align-self: center;
     }
 
     .bundle-visual-doc {
-      width: min(52vw, 190px);
-      max-width: 190px;
-      transform: translateX(-12px) rotate(-5deg);
+      width: min(44vw, 180px);
+      max-width: 180px;
+      transform: translateX(-8px) rotate(-5deg);
     }
 
     .bundle-visual-app {
-      width: min(41vw, 150px);
-      max-width: 150px;
-      margin-left: -12px;
+      width: min(34vw, 132px);
+      max-width: 132px;
+      margin-left: -10px;
     }
 
     .bundle-pricing {
-      order: 8;
+      order: 7;
       width: 100%;
       flex-direction: column;
       align-items: flex-start;
@@ -808,24 +814,24 @@ h1 {
     }
 
     .bundle-savings {
-      order: 9;
-      width: 100%;
+      order: 8;
+      width: fit-content;
+      max-width: 100%;
       white-space: normal;
     }
 
-    #komplettpaket > .button {
-      order: 10;
+    .bundle-copy > .button {
+      order: 9;
       width: 100%;
     }
 
     .bundle-note {
-      order: 11;
+      order: 10;
     }
-  }
 
-  .product-hero-grid .product-hero-copy {
-    order: 1;
-  }
+    .product-hero-grid .product-hero-copy {
+      order: 1;
+    }
 
   .product-hero-grid .product-hero-media {
     order: 2;
@@ -838,28 +844,32 @@ h1 {
     max-width: min(78vw, 280px);
   }
 
-  .two-col > :first-child:not(:last-child):has(img),
-  .two-col > .product-hero-media:first-child {
+  .content-section .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .content-section .two-col > .product-hero-media {
     order: 2;
-  }
-
-  .two-col > :nth-child(2):not(.product-hero-media),
-  .two-col > :first-child:not(:has(img)) {
-    order: 1;
-  }
-
-  .two-col > .product-hero-media {
     width: 100%;
     justify-content: center;
     margin-top: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
   }
 
-  .two-col > .product-hero-media img {
-    max-width: min(76vw, 260px);
+  .content-section .two-col > :not(.product-hero-media) {
+    order: 1;
   }
 
-  .two-col > .product-hero-media img + img {
-    margin-top: 0.9rem;
+  .content-section .two-col > .product-hero-media img {
+    width: min(72vw, 260px);
+    max-width: 260px;
+  }
+
+  .content-section .two-col > .product-hero-media img + img {
+    margin-top: 0;
   }
 
   .process-flow {
