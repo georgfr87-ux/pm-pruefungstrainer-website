@@ -771,6 +771,10 @@ h1 {
       max-width: 100%;
     }
 
+    .bundle-highlight {
+      order: 7;
+    }
+
     .bundle-visual {
       order: 6;
       min-height: 0;
@@ -792,6 +796,7 @@ h1 {
     }
 
     .bundle-pricing {
+      order: 8;
       width: 100%;
       flex-direction: column;
       align-items: flex-start;
@@ -803,17 +808,92 @@ h1 {
     }
 
     .bundle-savings {
+      order: 9;
       width: 100%;
       white-space: normal;
     }
 
     #komplettpaket > .button {
+      order: 10;
       width: 100%;
+    }
+
+    .bundle-note {
+      order: 11;
     }
   }
 
-  .product-hero-media {
-    order: -1;
+  .product-hero-grid .product-hero-copy {
+    order: 1;
+  }
+
+  .product-hero-grid .product-hero-media {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .product-hero-grid .product-hero-media img {
+    max-width: min(78vw, 280px);
+  }
+
+  .two-col > :first-child:not(:last-child):has(img),
+  .two-col > .product-hero-media:first-child {
+    order: 2;
+  }
+
+  .two-col > :nth-child(2):not(.product-hero-media),
+  .two-col > :first-child:not(:has(img)) {
+    order: 1;
+  }
+
+  .two-col > .product-hero-media {
+    width: 100%;
+    justify-content: center;
+    margin-top: 0.6rem;
+  }
+
+  .two-col > .product-hero-media img {
+    max-width: min(76vw, 260px);
+  }
+
+  .two-col > .product-hero-media img + img {
+    margin-top: 0.9rem;
+  }
+
+  .process-flow {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+  }
+
+  .process-step {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .process-arrow {
+    align-self: center;
+    line-height: 1;
+    font-size: 1rem;
+  }
+
+  .process-flow-linear .process-arrow,
+  .process-flow-cycle .process-arrow:not(:last-of-type) {
+    color: transparent;
+    position: relative;
+  }
+
+  .process-flow-linear .process-arrow::before,
+  .process-flow-cycle .process-arrow:not(:last-of-type)::before {
+    content: "↓";
+    color: var(--text-muted);
+  }
+
+  .process-flow-cycle .process-arrow:last-of-type {
+    color: var(--primary);
   }
 
   .questions-hero-grid {
