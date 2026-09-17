@@ -732,6 +732,84 @@ h1 {
     .hero-media img {
       max-width: 100%;
     }
+
+    .hero .hero-media {
+      width: 100%;
+      max-width: 100%;
+      margin: 1.15rem auto 0;
+      justify-content: center;
+      align-items: flex-end;
+      transform: none !important;
+      overflow: visible;
+    }
+
+    .hero .hero-media img:first-child {
+      width: 44% !important;
+      max-width: 180px !important;
+      transform: rotate(-5deg) !important;
+      margin-left: 0 !important;
+    }
+
+    .hero .hero-media img:last-child {
+      width: 39% !important;
+      max-width: 170px !important;
+      margin-left: -12px !important;
+      transform: none !important;
+    }
+
+    .bundle-panel {
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .bundle-copy {
+      width: 100%;
+      gap: 0.75rem;
+    }
+
+    .bundle-copy > * {
+      max-width: 100%;
+    }
+
+    .bundle-visual {
+      order: 6;
+      min-height: 0;
+      padding: 0.35rem 0 0.2rem;
+      overflow: visible;
+      justify-content: center;
+    }
+
+    .bundle-visual-doc {
+      width: min(52vw, 190px);
+      max-width: 190px;
+      transform: translateX(-12px) rotate(-5deg);
+    }
+
+    .bundle-visual-app {
+      width: min(41vw, 150px);
+      max-width: 150px;
+      margin-left: -12px;
+    }
+
+    .bundle-pricing {
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.7rem;
+    }
+
+    .bundle-price-block {
+      width: 100%;
+    }
+
+    .bundle-savings {
+      width: 100%;
+      white-space: normal;
+    }
+
+    #komplettpaket > .button {
+      width: 100%;
+    }
   }
 
   .product-hero-media {
