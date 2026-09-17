@@ -872,8 +872,8 @@ h1 {
     }
 
     .bundle-visual-doc {
-      width: min(44vw, 162px);
-      max-width: 162px;
+      width: 44%;
+      max-width: 180px;
       position: relative;
       left: auto;
       right: auto;
@@ -884,8 +884,8 @@ h1 {
     }
 
     .bundle-visual-app {
-      width: min(33vw, 118px);
-      max-width: 118px;
+      width: 39%;
+      max-width: 170px;
       position: relative;
       left: auto;
       right: auto;
