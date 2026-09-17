@@ -32,12 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
     toggle.setAttribute("aria-label", isOpen ? "Navigation schließen" : "Navigation öffnen");
   });
 
-  window.addEventListener("scroll", function () {
-    if (header.classList.contains("nav-open")) {
-      closeMenu();
-    }
-  }, { passive: true });
-
   navLinks.forEach(function (link) {
     link.addEventListener("click", function () {
       setSingleActiveLink(link);
