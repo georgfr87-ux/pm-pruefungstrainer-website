@@ -145,7 +145,7 @@ img {
 
 .main-nav a:hover,
 .main-nav a.active {
-  background: rgba(122, 140, 255, 0.14);
+  background: rgba(101, 84, 192, 0.14);
   color: var(--text);
 }
 
@@ -270,8 +270,8 @@ h1 {
   width: 2.15rem;
   height: 2.15rem;
   border-radius: 999px;
-  border: 1px solid rgba(122, 140, 255, 0.35);
-  background: rgba(122, 140, 255, 0.14);
+  border: 1px solid rgba(101, 84, 192, 0.35);
+  background: rgba(101, 84, 192, 0.14);
   color: var(--primary);
   font-size: 0.85rem;
   font-weight: 800;
@@ -299,7 +299,7 @@ h1 {
   top: 2.45rem;
   bottom: -1rem;
   width: 2px;
-  background: rgba(122, 140, 255, 0.28);
+  background: rgba(101, 84, 192, 0.28);
 }
 
 .hero-prep-step > div {
@@ -552,7 +552,7 @@ h1 {
 .solution-toggle {
   appearance: none;
   border: 1px solid var(--border);
-  background: rgba(122, 140, 255, 0.14);
+  background: rgba(101, 84, 192, 0.14);
   color: var(--text);
   border-radius: 12px;
   min-height: 42px;
@@ -570,7 +570,7 @@ h1 {
   padding: 0.55rem 0.9rem;
   border: 1px solid var(--border);
   border-radius: 999px;
-  background: rgba(122, 140, 255, 0.14);
+  background: rgba(101, 84, 192, 0.14);
   color: var(--text);
   font: inherit;
   font-weight: 700;
@@ -592,8 +592,8 @@ h1 {
 }
 
 .question-solution > summary:hover {
-  background: rgba(122, 140, 255, 0.2);
-  border-color: rgba(122, 140, 255, 0.35);
+  background: rgba(101, 84, 192, 0.2);
+  border-color: rgba(101, 84, 192, 0.35);
 }
 
 .solution-panel {
@@ -677,7 +677,7 @@ h1 {
   }
 
   .main-nav a.active {
-    background: rgba(122, 140, 255, 0.14);
+    background: rgba(101, 84, 192, 0.14);
   }
 
   .site-header.nav-open .nav-wrap {
@@ -1144,7 +1144,7 @@ h1 {
 }
 
 .process-flow-cycle .process-step:last-child {
-  border-color: rgba(122, 140, 255, 0.35);
+  border-color: rgba(101, 84, 192, 0.35);
 }
 
 .final-cta p:last-of-type {
@@ -1264,8 +1264,8 @@ h1 {
   margin: 0;
   padding: 0.45rem 0.7rem;
   border-radius: 999px;
-  background: rgba(122, 140, 255, 0.12);
-  border: 1px solid rgba(122, 140, 255, 0.4);
+  background: rgba(101, 84, 192, 0.12);
+  border: 1px solid rgba(101, 84, 192, 0.4);
   color: var(--brand);
   font-size: 0.72rem;
   font-weight: 800;
@@ -1329,8 +1329,8 @@ h1 {
   margin: 0;
   padding: 0.45rem 0.8rem;
   border-radius: 999px;
-  background: rgba(122, 140, 255, 0.14);
-  border: 1px solid rgba(122, 140, 255, 0.4);
+  background: rgba(101, 84, 192, 0.14);
+  border: 1px solid rgba(101, 84, 192, 0.4);
   color: var(--brand);
   font-weight: 700;
 }
@@ -1643,8 +1643,8 @@ h1 {
   margin-top: 1rem;
   padding: 0.9rem 1rem;
   border-radius: 12px;
-  border: 1px solid rgba(122, 140, 255, 0.25);
-  background: rgba(122, 140, 255, 0.08);
+  border: 1px solid rgba(101, 84, 192, 0.25);
+  background: rgba(101, 84, 192, 0.08);
   color: var(--text);
 }
 
