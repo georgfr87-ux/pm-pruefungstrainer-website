@@ -145,7 +145,78 @@
                 </div>
               </div>
               <p class="bundle-savings">Du sparst 4,99 € gegenüber dem Einzelkauf.</p>
-              <a href="#komplettpaket" class="button button-primary">Komplettpaket wählen</a>
+              <button type="button" class="button button-primary" id="bundle-start-button">
+                Komplettpaket kaufen
+              </button>
+
+              <div id="bundle-verification" hidden style="margin-top:1.5rem;">
+                <h4 style="margin-bottom:0.75rem;">So kaufst du das Komplettpaket</h4>
+
+                <p>
+                  Das Komplettpaket kostet insgesamt <strong>24,99 €</strong>.
+                  Die App kaufst du direkt bei Google Play, die Lernzusammenfassung
+                  anschließend hier zum vergünstigten Bundle-Preis.
+                </p>
+
+                <div style="margin-top:1.25rem; padding:1rem; border:1px solid rgba(127,127,127,0.3); border-radius:10px;">
+                  <p style="margin-top:0;">
+                    <strong>1. App bei Google Play kaufen – 19,99 €</strong>
+                  </p>
+                  <p>
+                    Kaufe zuerst die PM Prüfungstrainer App bei Google Play.
+                    Deine Google-Play-Bestellnummer (<strong>GPA...</strong>) benötigst
+                    du anschließend zur Freischaltung des Bundle-Preises.
+                  </p>
+
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.georg.ipmaleveldlernapp"
+                    class="button button-secondary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    App bei Google Play kaufen
+                  </a>
+                </div>
+
+                <div style="margin-top:1rem; padding:1rem; border:1px solid rgba(127,127,127,0.3); border-radius:10px;">
+                  <p style="margin-top:0;">
+                    <strong>2. Lernzusammenfassung kaufen – 5,00 €</strong>
+                  </p>
+                  <p>
+                    Frühestens <strong>2 Stunden nach dem App-Kauf</strong> kannst du
+                    deine Google-Play-Bestellnummer hier prüfen lassen. Nach erfolgreicher
+                    Prüfung öffnet sich automatisch die Zahlung für die
+                    Lernzusammenfassung zum Bundle-Preis von 5,00 €.
+                  </p>
+
+                  <p>
+                    <strong>App bereits gekauft?</strong> Dann kannst du direkt mit
+                    der Prüfung deiner Bestellnummer fortfahren.
+                  </p>
+
+                  <label for="google-order-id" style="display:block; margin-bottom:0.4rem;">
+                    Google-Play-Bestellnummer
+                  </label>
+
+                  <div style="display:flex; flex-wrap:wrap; gap:0.65rem; align-items:center;">
+                    <input
+                      type="text"
+                      id="google-order-id"
+                      name="google-order-id"
+                      placeholder="GPA.1234-5678-9012-34567"
+                      autocomplete="off"
+                      style="box-sizing:border-box; width:min(100%, 360px); min-width:280px; padding:0.75rem 0.85rem;"
+                    />
+
+                    <button type="button" class="button button-primary" id="google-order-check-button">
+                      Kauf prüfen
+                    </button>
+                  </div>
+
+                  <p id="google-order-status" aria-live="polite"></p>
+                </div>
+              </div>
+
               <p class="bundle-note">Einmal kaufen. Komplett vorbereiten.</p>
             </div>
             <div class="bundle-visual">
@@ -234,11 +305,15 @@
       <div class="container footer-wrap">
         <p>© 2026 ForGio Studio · PM Prüfungstrainer</p>
         <div class="footer-links">
+          <a href="agb.html">AGB</a>
+          <a href="rueckerstattung.html">Rückerstattung</a>
           <a href="datenschutz.html">Datenschutz</a>
           <a href="impressum.html">Impressum</a>
         </div>
       </div>
     </footer>
+    <script src="https://cdn.paddle.com/paddle/v2/paddle.js" defer></script>
+    <script src="assets/js/paddle-checkout.js" defer></script>
     <script src="assets/js/main.js" defer></script>
   </body>
 </html>
