@@ -14,10 +14,15 @@ if (
   googleOrderCheckButton &&
   googleOrderStatus
 ) {
-  bundleStartButton.addEventListener("click", () => {
+  const showBundleVerification = () => {
     bundleVerification.hidden = false;
-    googleOrderInput.focus();
-  });
+  };
+
+  bundleStartButton.addEventListener("click", showBundleVerification);
+
+  if (window.location.hash === "#komplettpaket") {
+    showBundleVerification();
+  }
 
   googleOrderCheckButton.addEventListener("click", async () => {
     const orderId = googleOrderInput.value.trim();
