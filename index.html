@@ -119,7 +119,7 @@
                 <span class="price-note">Einführungspreis</span>
               </div>
               <div class="card-cta-wrap">
-                <a href="#app" class="button button-secondary">Zur App</a>
+                <a href="app.html" class="button button-secondary">Zur App</a>
               </div>
             </article>
           </div>
@@ -145,7 +145,7 @@
                 </div>
               </div>
               <p class="bundle-savings">Du sparst 4,99 € gegenüber dem Einzelkauf.</p>
-              <button type="button" class="button button-primary" id="bundle-start-button">
+              <button type="button" class="button button-primary" id="bundle-start-button" style="font: inherit;">
                 Komplettpaket kaufen
               </button>
 
@@ -315,5 +315,26 @@
     <script src="https://cdn.paddle.com/paddle/v2/paddle.js" defer></script>
     <script src="assets/js/paddle-checkout.js" defer></script>
     <script src="assets/js/main.js" defer></script>
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        const bundleStartButton = document.getElementById("bundle-start-button");
+        const bundleVerification = document.getElementById("bundle-verification");
+
+        if (!bundleStartButton || !bundleVerification) return;
+
+        bundleStartButton.addEventListener("click", function () {
+          window.setTimeout(function () {
+            if (document.activeElement && document.activeElement.id === "google-order-id") {
+              document.activeElement.blur();
+            }
+
+            bundleVerification.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+          }, 0);
+        });
+      });
+    </script>
   </body>
 </html>
