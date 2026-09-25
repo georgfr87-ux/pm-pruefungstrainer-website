@@ -209,6 +209,10 @@ h1 {
   border-radius: 12px;
   font-weight: 700;
   border: 1px solid transparent;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: inherit;
+  cursor: pointer;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
