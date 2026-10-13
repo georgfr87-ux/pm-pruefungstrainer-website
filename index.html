@@ -227,6 +227,36 @@
         </div>
       </section>
 
+      <section class="content-section video-showcase-section">
+        <div class="container">
+          <p class="eyebrow">VIDEO</p>
+          <h2>PM Prüfungstrainer in 2 Minuten kennenlernen</h2>
+          <p class="section-intro">
+            Sieh dir die App, die kompakte Lernzusammenfassung und die kostenlosen IPMA® Level D Prüfungsfragen im Überblick an.
+          </p>
+
+          <div class="video-consent-shell">
+            <button
+              type="button"
+              class="video-consent-button"
+              data-youtube-video-id="fYTdfkeM8lo"
+              aria-label="YouTube-Video zur IPMA Level D Prüfungsvorbereitung laden"
+            >
+              <img
+                src="assets/images/youtube-pm-pruefungstrainer.png"
+                alt="Vorschau zum YouTube-Video des PM Prüfungstrainers"
+              />
+              <span class="video-consent-overlay" aria-hidden="true"></span>
+              <span class="video-consent-play" aria-hidden="true">
+                <span class="video-consent-play-icon">▶</span>
+                <span class="video-consent-play-text">Video ansehen</span>
+              </span>
+            </button>
+            <p class="video-consent-note">Mit Klick auf „Video ansehen“ wird eine Verbindung zu YouTube hergestellt.</p>
+          </div>
+        </div>
+      </section>
+
       <section id="app" class="content-section">
         <div class="container">
           <div class="origin-grid">
@@ -333,6 +363,34 @@
               block: "start"
             });
           }, 0);
+        });
+      });
+    </script>
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        const consentButton = document.querySelector(".video-consent-button[data-youtube-video-id]");
+        const consentShell = consentButton ? consentButton.closest(".video-consent-shell") : null;
+        const consentNote = consentShell ? consentShell.querySelector(".video-consent-note") : null;
+
+        if (!consentButton) return;
+
+        consentButton.addEventListener("click", function () {
+          const videoId = consentButton.getAttribute("data-youtube-video-id");
+          if (!videoId) return;
+
+          const iframe = document.createElement("iframe");
+          iframe.className = "video-consent-frame";
+          iframe.title = "IPMA Level D Prüfungsvorbereitung – PM Prüfungstrainer";
+          iframe.allow =
+            "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+          iframe.allowFullscreen = true;
+          iframe.src = "https://www.youtube-nocookie.com/embed/" + videoId + "?autoplay=1";
+
+          if (consentNote) {
+            consentNote.remove();
+          }
+
+          consentButton.replaceWith(iframe);
         });
       });
     </script>
