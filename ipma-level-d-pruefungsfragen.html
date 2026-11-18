@@ -73,12 +73,12 @@
           <h2>150 kostenlose IPMA Level D Übungsfragen als PDF</h2>
           <p class="section-intro">Lade 150 offene Übungsfragen mit Musterlösungen für beide Prüfungsteile herunter. Die PDF deckt alle 28 Kompetenzelemente ab.</p>
           <p>Die Prüfungsfragen wurden eigenständig für die Prüfungsvorbereitung entwickelt. Es handelt sich nicht um offizielle oder aus Prüfungen übernommene Originalfragen der GPM oder IPMA®.</p>
-          <a href="downloads/ipma-level-d-pruefungsfragen-kostenlos.pdf" class="button button-primary" download>150 Fragen mit Lösungen herunterladen</a>
+          <a href="downloads/ipma-level-d-pruefungsfragen-kostenlos.pdf" class="button button-primary" download id="pdf-150-download">150 Fragen mit Lösungen herunterladen</a>
 
           <div class="panel section-copy exam-training-info" style="margin-top:1.5rem;">
             <h2>Noch mehr IPMA Level D Prüfungsfragen üben?</h2>
-            <p>Für dein weiteres Training bietet dir der PM Prüfungstrainer 819 eigenständig entwickelte Übungsfragen zu allen 28 Kompetenzelementen sowie Agilem Projektmanagement &amp; Scrum – mit Lernmodus, Prüfungsmodus und Fortschrittsauswertung.</p>
-            <a href="app.html" class="button button-primary">819 Übungsfragen in der App ansehen</a>
+            <p>Für dein weiteres Training bietet dir der PM Prüfungstrainer 1.006 eigenständig entwickelte Übungsfragen zu allen 28 Kompetenzelementen sowie Agilem Projektmanagement &amp; Scrum – mit Lernmodus, Prüfungsmodus und Fortschrittsauswertung.</p>
+            <a href="app.html" class="button button-primary">Zur Lern-App</a>
           </div>
         </div>
       </section>
@@ -225,15 +225,14 @@
       <section id="app-cta" class="content-section">
         <div class="container">
           <div class="panel section-copy">
-            <h2>Mit 819 Übungsfragen weitertrainieren</h2>
-            <p>Du möchtest systematisch weitertrainieren? Der PM Prüfungstrainer bietet dir 819 Übungsfragen sowie Lernmodus, realistische Prüfungssimulationen, ausführliche Musterlösungen und Fortschrittsauswertung.</p>
+            <h2>In der Lern-App weitertrainieren</h2>
+            <p>Im PM Prüfungstrainer kannst du Fragen nach deinem Lernstand filtern oder eine Prüfung simulieren.</p>
             <ul class="feature-list">
-              <li>819 Übungsfragen</li>
               <li>offene Fragen &amp; Single Choice</li>
               <li>ausführliche Musterlösungen</li>
               <li>Lernmodus</li>
               <li>realistischer Prüfungsmodus</li>
-              <li>Fortschritt, Statistik, Filter &amp; Lernserie</li>
+              <li>Suche und Filter, Lesezeichen und Schwierig-Markierungen</li>
               <li>komplett offline</li>
               <li>ohne Werbung und ohne Abo</li>
             </ul>
@@ -255,5 +254,25 @@
       </div>
     </footer>
     <script src="assets/js/main.js" defer></script>
-  </body>
+  <script>
+  const pdfClickEndpoint = "https://pdf-download-counter.georg-foerster1.workers.dev/pdf-click";
+  const pdfDownload = document.getElementById("pdf-150-download");
+
+  if (pdfClickEndpoint && pdfDownload) {
+    const countPdfClick = () => {
+      fetch(pdfClickEndpoint, {
+        method: "POST",
+        credentials: "omit",
+        referrerPolicy: "no-referrer",
+        keepalive: true
+      }).catch(() => {});
+    };
+
+    pdfDownload.addEventListener("click", countPdfClick);
+    pdfDownload.addEventListener("auxclick", (event) => {
+      if (event.button === 1) countPdfClick();
+    });
+  }
+</script>
+</body>
 </html>
