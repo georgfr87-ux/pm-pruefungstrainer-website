@@ -58,6 +58,7 @@
             </div>
             <div class="cta-row">
               <a href="#inhalt" class="button button-primary" data-paddle-product="learning-summary">Lernzusammenfassung kaufen</a>
+              <a href="downloads/ipma-level-d-lernzusammenfassung-leseprobe.pdf" class="button button-secondary" data-lesenprobe-download download>Kostenlose Leseprobe herunterladen</a>
             </div>
           </div>
           <div class="product-hero-media">
@@ -125,8 +126,10 @@
           </div>
 
           <p class="preview-caption">Auszüge aus der Lernzusammenfassung. Die vollständige Version umfasst 76 Seiten kompakt aufbereitete Lerninhalte.</p>
+          <p class="preview-caption">Die kostenlose Leseprobe enthält Cover, Einführung, Inhaltsverzeichnis und die Abschnitte Teamarbeit und Qualität auf insgesamt acht Seiten.</p>
           <div class="cta-row preview-cta-row">
             <a href="#inhalt" class="button button-primary" data-paddle-product="learning-summary">Lernzusammenfassung kaufen</a>
+              <a href="downloads/ipma-level-d-lernzusammenfassung-leseprobe.pdf" class="button button-secondary" data-lesenprobe-download download>Kostenlose Leseprobe herunterladen</a>
           </div>
         </div>
       </section>
@@ -216,5 +219,21 @@
     <script src="https://cdn.paddle.com/paddle/v2/paddle.js" defer></script>
     <script src="assets/js/paddle-checkout.js" defer></script>
     <script src="assets/js/main.js" defer></script>
-  </body>
+  <script>
+  document.querySelectorAll("[data-lesenprobe-download]").forEach((button) => {
+    const countClick = () => {
+      fetch("https://pdf-download-counter.georg-foerster1.workers.dev/leseprobe-click", {
+        method: "POST",
+        credentials: "omit",
+        referrerPolicy: "no-referrer",
+        keepalive: true
+      }).catch(() => {});
+    };
+    button.addEventListener("click", countClick);
+    button.addEventListener("auxclick", (event) => {
+      if (event.button === 1) countClick();
+    });
+  });
+</script>
+</body>
 </html>
