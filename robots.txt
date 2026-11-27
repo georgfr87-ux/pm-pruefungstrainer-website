@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /webapp/
 Allow: /
 
 Sitemap: https://pm-pruefungstrainer.de/sitemap.xml
